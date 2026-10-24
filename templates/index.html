@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{%for movie in movies %}
+{% if movie.review > 4 %}
+<a href="{% url 'getMovie' movie.id %}"><p>{{ movie.title }} - HIT</p></a>
+{% else %}
+<a href="{% url 'getMovie' movie.id %}"><p>{{ movie.title}} - FLOP</p></a>
+{% endif %}
+{% endfor %}
+<a href="{% url 'addMovie' %}"><button>AddMovies</button></a>
+</body>
+</html>
